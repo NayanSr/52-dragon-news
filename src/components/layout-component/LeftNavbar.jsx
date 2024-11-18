@@ -13,7 +13,9 @@ useEffect(()=>{
             <h2 className="font-semibold">All News</h2>
             <div className="flex flex-col gap-2">
             {
-                categiries.map((categiry,indx)=><button className="btn" key={indx}>{categiry.category_name}</button>)
+                categiries.map((categiry,indx)=>
+                <button className="btn" key={indx}>{categiry.category_name}</button>
+            )
             }
             </div>
         </div>
