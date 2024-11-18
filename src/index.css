@@ -4,3 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a.active{
+    background-color: rgb(91, 119, 91);
+    color: bisque;
+    font-size: larger;
+}
