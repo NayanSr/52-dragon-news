@@ -1,18 +1,19 @@
 /* eslint-disable react/prop-types */
 
-const NewsCart = ({news}) => {
-    console.log(news);
-    return (
-        <div className="mb-12 border-2 p-4 rounded-2xl">
-<h2 className="text-2xl">{news.title}</h2>
-<img src={news.image_url} alt="" />
-        </div>
-    );
+import { Link } from "react-router-dom";
+
+const NewsCart = ({ news }) => {
+  console.log(news);
+  return (
+    <div className="mb-12 border-2 p-4 rounded-2xl">
+      <h2 className="text-2xl">{news.title}</h2>
+      <img src={news.image_url} alt="" />
+      <Link to={`/news/${news._id}`}>Read More</Link>
+    </div>
+  );
 };
 
 export default NewsCart;
-
-
 
 /* 
 {
