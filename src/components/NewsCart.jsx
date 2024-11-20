@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 
 const NewsCart = ({ news }) => {
-  console.log(news);
+  // console.log(news);
   return (
     <div className="mb-12 border-2 p-4 rounded-2xl">
       <h2 className="text-2xl">{news.title}</h2>

@@ -13,6 +13,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/career">Carrer</Link>
         <Link to="/about">About</Link>
+        <Link to="/auth/register">Register</Link>
       </div>
       <div className="flex items-center gap-4">
         <img src={userProfilePhoto} alt="" />

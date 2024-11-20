@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
-const {createNewUser, setUser}= useContext(AuthContext)
+const {createNewUser, setUser, updateUserProfile}= useContext(AuthContext);
+const navigate= useNavigate()
 
 const handleSubmit=(e)=>{
   e.preventDefault();
@@ -12,11 +13,20 @@ const handleSubmit=(e)=>{
   const photo= form.get("photo");
   const password= form.get("password");
   const email= form.get("email");
-  console.log({name,photo,password,email});
+  // console.log({name,photo,password,email});
   createNewUser(email,password)
   .then(result=>{
     console.log(result.user);
-    setUser(result.user)
+    setUser(result.user);
+    updateUserProfile({displayName:name, photoURL: photo})
+  
+    .then(()=>{
+      navigate('/');
+      console.log(result.user);
+    })
+    .catch(error=>{
+      console.log(error);
+    })
   })
   .catch(error=>{
     console.log(error.errorMessage);
